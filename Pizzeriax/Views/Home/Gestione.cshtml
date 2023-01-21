@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Gestione";
+}
+
+<h2>Gestione</h2>
+<hr />
+<div class="row">
+    <div class="col-12">
+
+    </div>
+
+
+    <div class="col-12">
+
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+
+                    <img class="card-img-top" src="~/Content/img/menu.jpeg" />
+                    <div class="card-img-overlay m-0 p-0 d-flex flex-column align-items-center justify-content-end ">
+                        <div class="btn-gestione bg-dark bg-opacity-50 w-100 d-flex justify-content-center ">
+                            @Html.ActionLink("Gestione Menu", "Index", "pizzes", null, new { @class = " font-weight-bold text-white btn btn-lg text-decoration-none display-3" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+
+                    <img class="card-img-top" src="~/Content/img/clients.jpg" />
+                    <div class="card-img-overlay m-0 p-0 d-flex flex-column align-items-center justify-content-end ">
+                        <div class="btn-gestione bg-dark bg-opacity-50 w-100 d-flex justify-content-center ">
+                            @Html.ActionLink("Gestione Clienti", "Index", "users", null, new { @class = " font-weight-bold text-white btn btn-lg text-decoration-none display-3" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="~/Content/img/orders.jpg" />
+                    <div class="card-img-overlay m-0 p-0 d-flex flex-column align-items-center justify-content-end ">
+                        <div class="btn-gestione bg-dark bg-opacity-50 w-100 d-flex justify-content-center ">
+                            @Html.ActionLink("Gestione Ordini", "Create", "Travel", null, new { @class = " font-weight-bold text-white btn btn-lg text-decoration-none display-3" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+

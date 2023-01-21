@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="container-fluid ">
+
+    <div class="col card text-bg-dark mt-0 p-0">
+        @*<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="button" class="btn btn-success">Left</button>
+            <button type="button" class="btn btn-light">Middle</button>
+            <button type="button" class="btn btn-danger">Right</button>
+        </div>*@
+
+        <div class="mt-5 row ">
+
+            <div class="col-md-6">
+                <h2>IL RISTORANTE</h2>
+                <p>
+                    Sarete accolti da un personale specializzato e professionale, disponibile nel darvi consigli sulle specialità offerte. Menù gourmet, pietanze cucinate con materie prime di qualità
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <h2>I DESSERT</h2>
+                <p>Ricette di cucina, rivisitate da abbinamenti originali, fanno dei nostri dolci la garanzia del mangiare sano e ricercato, un connubio che nella sua semplicità crea sapori unici.</p>
+
+            </div>
+
+        </div>
+
+        <img src="~/Content/img/pexels-cottonbro-studio-3944309.jpg" class="card-img img-fluid" alt="pizza" />
+        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+            <button type="button" class="btn btn-lg text-black btn-warning"> @Html.ActionLink("Ordina ora!", "menu", "pizzes", null, new { @class = "text-decoration-none text-light mx-5" })</button>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

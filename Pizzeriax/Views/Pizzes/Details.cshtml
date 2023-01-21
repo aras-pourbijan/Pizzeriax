@@ -1,0 +1,58 @@
+﻿@model Pizzeriax.Models.Pizze
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pizze</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomePizza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomePizza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prezzo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prezzo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cottura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cottura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingredienti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ingredienti)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDpizza }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
