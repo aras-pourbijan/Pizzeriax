@@ -128,6 +128,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\authController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrdiniController.cs" />
     <Compile Include="Controllers\PizzesController.cs" />
     <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -206,6 +207,11 @@
     <Content Include="Views\users\Edit.cshtml" />
     <Content Include="Views\users\Index.cshtml" />
     <Content Include="Views\auth\login.cshtml" />
+    <Content Include="Views\Ordini\Create.cshtml" />
+    <Content Include="Views\Ordini\Delete.cshtml" />
+    <Content Include="Views\Ordini\Details.cshtml" />
+    <Content Include="Views\Ordini\Edit.cshtml" />
+    <Content Include="Views\Ordini\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

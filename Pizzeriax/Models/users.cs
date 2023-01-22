@@ -36,6 +36,7 @@ namespace Pizzeriax.Models
         public string Nome { get; set; }
         [Display(Name = "Amministratore?")]
         public bool? IsAdmin { get; set; }
+        //NonSerializedAttribute dovevo gestire ruoli con bool, ho trovato dificolta con lista in roleprovider
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ordini> Ordini { get; set; }

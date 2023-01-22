@@ -27,15 +27,19 @@
                     <li class="nav-link">
                         @Html.ActionLink("Gestione", "Gestione", "Home", "", new { @class = "text-decoration-none text-light" })
                     </li>
+                    <li class="nav-link">
+                        @Html.ActionLink("Registrati ora!", "create", "users", "", new { @class = "text-decoration-none text-warning" })
+                    </li>
+
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li class="nav-link ms-5">@User.Identity.Name @Html.ActionLink("logout", "logout", "auth", "", new { @class = "text-decoration-none text-light" })</li>
+                        <li class="nav-link ms-5">@User.Identity.Name @Html.ActionLink("logout", "logout", "auth", "", new { @class = "text-decoration-none text-light " })</li>
                     }
                     else
                     {
-                        <li class="nav-link"> @User.Identity.Name @Html.ActionLink("login", "login", "auth","", new { @class = "text-decoration-none text-light" })</li>
-                }
+                        <li class="nav-link"> @User.Identity.Name @Html.ActionLink("login", "login", "auth", "", new { @class = "text-decoration-none text-light" })</li>
+                    }
 
                 </ul>
 

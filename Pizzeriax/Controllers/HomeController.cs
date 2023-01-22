@@ -15,6 +15,7 @@ namespace Pizzeriax.Controllers
             return View();
         }
 
+         [Authorize(Users = "admin")]
         public ActionResult Gestione()
         {
 

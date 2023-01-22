@@ -20,7 +20,7 @@ namespace Pizzeriax.Controllers
         {
             return View(db.Pizze.ToList());
         }
-
+        [AllowAnonymous]
         public ActionResult Menu()
         {
             return View(db.Pizze.ToList());

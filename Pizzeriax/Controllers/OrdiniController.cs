@@ -10,114 +10,113 @@ using Pizzeriax.Models;
 
 namespace Pizzeriax.Controllers
 {
-    [Authorize (Users ="admin")]
-    public class usersController : Controller
+    public class OrdiniController : Controller
     {
         private Model1 db = new Model1();
 
-        // GET: users
+        // GET: Ordini
         public ActionResult Index()
         {
-            return View(db.users.ToList());
+            var ordini = db.Ordini.Include(o => o.users);
+            return View(ordini.ToList());
         }
 
-        // GET: users/Details/5
+        // GET: Ordini/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            users users = db.users.Find(id);
-            if (users == null)
+            Ordini ordini = db.Ordini.Find(id);
+            if (ordini == null)
             {
                 return HttpNotFound();
             }
-            return View(users);
+            return View(ordini);
         }
 
-        // GET: users/Create
-        [AllowAnonymous]
+        // GET: Ordini/Create
         public ActionResult Create()
         {
+            ViewBag.IDuser = new SelectList(db.users, "IDuser", "username");
             return View();
         }
 
-        // POST: users/Create
+        // POST: Ordini/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AllowAnonymous]
-        public ActionResult Create([Bind(Include = "IDuser,username,password,tel,Nome,IsAdmin")] users users)
+        public ActionResult Create([Bind(Include = "IDordine,DaraOrdine,IDpizza,IDuser,Indirizzo,Nota,IsForLunch,evaso")] Ordini ordini)
         {
             if (ModelState.IsValid)
             {
-                users.IsAdmin = false;
-                db.users.Add(users);
+                db.Ordini.Add(ordini);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(users);
+            ViewBag.IDuser = new SelectList(db.users, "IDuser", "username", ordini.IDuser);
+            return View(ordini);
         }
 
-        // GET: users/Edit/5
+        // GET: Ordini/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            users users = db.users.Find(id);
-            if (users == null)
+            Ordini ordini = db.Ordini.Find(id);
+            if (ordini == null)
             {
                 return HttpNotFound();
             }
-            return View(users);
+            ViewBag.IDuser = new SelectList(db.users, "IDuser", "username", ordini.IDuser);
+            return View(ordini);
         }
 
-        // POST: users/Edit/5
+        // POST: Ordini/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDuser,username,password,tel,Nome,IsAdmin")] users users)
+        public ActionResult Edit([Bind(Include = "IDordine,DaraOrdine,IDpizza,IDuser,Indirizzo,Nota,IsForLunch,evaso")] Ordini ordini)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(users).State = EntityState.Modified;
+                db.Entry(ordini).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(users);
+            ViewBag.IDuser = new SelectList(db.users, "IDuser", "username", ordini.IDuser);
+            return View(ordini);
         }
 
-        // GET: users/Delete/5
+        // GET: Ordini/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            users users = db.users.Find(id);
-            if (users == null)
+            Ordini ordini = db.Ordini.Find(id);
+            if (ordini == null)
             {
                 return HttpNotFound();
             }
-            return View(users);
+            return View(ordini);
         }
 
-        // POST: users/Delete/5
+        // POST: Ordini/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            users users = db.users.Find(id);
-            if (users.username != "admin") { 
-            db.users.Remove(users);
+            Ordini ordini = db.Ordini.Find(id);
+            db.Ordini.Remove(ordini);
             db.SaveChanges();
-            }
             return RedirectToAction("Index");
         }
 

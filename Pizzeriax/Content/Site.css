@@ -30,5 +30,9 @@ textarea {
 }
 
 body {
-    background-color: antiquewhite
+    background-color: antiquewhite; 
+}
+
+.ordina{
+    font:bold 50px;
 }
