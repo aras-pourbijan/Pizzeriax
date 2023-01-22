@@ -10,6 +10,7 @@ using Pizzeriax.Models;
 
 namespace Pizzeriax.Controllers
 {
+    [Authorize(Users = "admin")]
     public class PizzesController : Controller
     {
         private Model1 db = new Model1();

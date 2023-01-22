@@ -20,13 +20,14 @@ namespace Pizzeriax.Models
 
         [Required]
         [StringLength(40)]
+        
         public string NomePizza { get; set; }
 
         public string imgURL { get; set; }
 
         [Column(TypeName = "money")]
         public decimal prezzo { get; set; }
-
+        [Range(3, 20, ErrorMessage = "Tempo sara` tra 3 e 20 minuti!")]
         public int? Cottura { get; set; }
 
         public string Ingredienti { get; set; }
